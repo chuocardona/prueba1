@@ -1,0 +1,8 @@
+- name: Reiniciar el servidor
+  win_reboot:
+  register: resultado
+  ignore_errors: yes
+
+- name: Verificar resultado de reiniciar el servidor
+  set_fact:
+    reiniciar_servidor_status: "{{ not resultado.failed }}"
