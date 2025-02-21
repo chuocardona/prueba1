@@ -1,0 +1,8 @@
+---
+- name: Verificar conectividad con servidores Windows
+  hosts: windows_servers  # Grupo de hosts definido en el inventario
+  gather_facts: no  # No recolectar facts, ya que solo estamos haciendo ping
+
+  tasks:
+    - name: Hacer ping al servidor Windows
+      ansible.windows.win_ping:
