@@ -1,8 +1,9 @@
-- name: Reiniciar el servidor
-  win_reboot:
-  register: resultado
-  ignore_errors: yes
+---
+- name: Reiniciar servidor Windows
+  hosts: windows_servers  # Grupo de hosts definido en el inventario
+  gather_facts: no  # No recolectar facts, ya que solo estamos reiniciando
 
-- name: Verificar resultado de reiniciar el servidor
-  set_fact:
-    reiniciar_servidor_status: "{{ not resultado.failed }}"
+  tasks:
+    - name: Reiniciar el servidor Windows
+      ansible.windows.win_reboot:
+        reboot_timeout: 600  # Tiempo de espera para que el servidor se reinicie (en segundos)
