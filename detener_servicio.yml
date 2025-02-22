@@ -44,4 +44,4 @@
         loop_var: item  # Variable de iteración para el bucle
 
 # Llamar al playbook de reinicio (nivel superior)
-- import_playbook: reinicio_servidor.yml
+#- import_playbook: reinicio_servidor.yml
