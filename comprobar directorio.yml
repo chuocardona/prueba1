@@ -30,7 +30,7 @@
       ansible.windows.win_file:
         path: "{{ ruta_destino }}"
         state: directory
-  - name: Verificar existencia de la ruta de origen
+   - name: Verificar existencia de la ruta de origen
       ansible.windows.win_stat:
         path: "{{ ruta_origen }}"
       register: ruta_origen_stat
