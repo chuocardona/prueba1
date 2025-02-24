@@ -1,6 +1,6 @@
 ---
 - name: Monitorizar ruta y mover archivos anteriores a las 14:15 en un servidor Windows
-  hosts: windows
+  hosts: windows_servers
   tasks:
     - name: Obtener la fecha y hora actual
       ansible.windows.win_shell: Get-Date -Format "yyyy-MM-dd HH:mm"
