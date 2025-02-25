@@ -1,6 +1,6 @@
 ---
 - name: Monitorizar ruta durante 90 segundos y avisar si hay cambios en la carpeta
-  hosts: windows
+  hosts: servidor_windows_1
   tasks:
     - name: Verificar si la carpeta existe
       ansible.windows.win_stat:
